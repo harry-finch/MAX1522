@@ -1,13 +1,14 @@
-# MAX1522 circuit generator by Stéphane Muller
+# MAX1522 circuit generator
 The script will calculate the values of the passive components needed given a Vin and a desired Vout.
 All formulas taken from the datasheet.
 
 Datasheet for MAX1522: https://datasheets.maximintegrated.com/en/ds/MAX1522-MAX1524.pdf
 
+Arguments are optional, user will be prompted for values.
+
 ```
 python3 MAX1522.py [Vin] [Vout]
 ```
-Arguments are optional, user will be prompted for values.
 
 # elecUnits
 elecUnits is a library to convert numbers into a prefix notation or vice versa.
