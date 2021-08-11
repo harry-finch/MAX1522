@@ -13,7 +13,7 @@ import sys
 # elecUnits.py needs to be in the same directory
 import elecUnits
 
-Vinmin, Vout = ''
+Vinmin, Vout = '', ''
 
 def dcmDesign(Vinmin, Vout, Vd, Iloadmax, Ton, Tss, Rtwo, Vfb):
     Rone = Rtwo * ((Vout / Vfb) - 1)
@@ -22,14 +22,7 @@ def dcmDesign(Vinmin, Vout, Vd, Iloadmax, Ton, Tss, Rtwo, Vfb):
     Coutmin = (Ton*Ton*Vinmin*Vinmin)/(2*Lideal*(Vout+Vd-Vinmin)*0.02*Vout)
     Coutmax = (Iloadmax*Tss)/Vout
 
-    print()
-    print("Vin(min) = {:.1f}V and Vout = {:.1f}V".format(Vinmin, Vout))
-    print("Max duty cycle is {:.1f}% >> DCM design".format(dutyCycle))
-    print()
-    print("R1 = {}Ω and R2 = {}Ω".format(elecUnits.unitPrefix(Rone), elecUnits.unitPrefix(Rtwo)))
-    print("L(ideal) = {}H".format(elecUnits.unitPrefix(Lideal)))
-    print("Cout(min) = {}F and Cout(max) = {}F".format(elecUnits.unitPrefix(Coutmin), elecUnits.unitPrefix(Coutmax)))
-    print()
+    displayResults(Vinmin, Vout, Rone, Rtwo, dutyCycle, Lideal, Coutmin, Coutmax)
 
 def ccmDesign(Vinmin, Vout, Vd, Iloadmax, Ton, Tss, Rtwo, Vfb):
     Rone = Rtwo * ((Vout / Vfb) - 1)
@@ -38,9 +31,13 @@ def ccmDesign(Vinmin, Vout, Vd, Iloadmax, Ton, Tss, Rtwo, Vfb):
     Coutmin = (Ton*Iloadmax)/(0.005*Vout)
     Coutmax = (Iloadmax*Tss)/Vout
 
+    displayResults(Vinmin, Vout, Rone, Rtwo, dutyCycle, Lideal, Coutmin, Coutmax)
+    
+
+def displayResults(Vinmin, Vout, Rone, Rtwo, dutyCycle, Lideal, Coutmin, Coutmax):
     print()
-    print("Vin(min) = {:.1f}V and Vout = {:.1f}V".format(Vout, Vout))
-    print("Max duty cycle is {:.1f}% >> CCM design".format(dutyCycle))
+    print("Vin(min) = {:.1f}V and Vout = {:.1f}V".format(Vinmin, Vout))
+    print("Max duty cycle is {:.1f}%".format(dutyCycle))
     print()
     print("R1 = {}Ω and R2 = {}Ω".format(elecUnits.unitPrefix(Rone), elecUnits.unitPrefix(Rtwo)))
     print("L(ideal) = {}H".format(elecUnits.unitPrefix(Lideal)))
