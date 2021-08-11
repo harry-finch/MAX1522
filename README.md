@@ -7,7 +7,16 @@ Datasheet for MAX1522: https://datasheets.maximintegrated.com/en/ds/MAX1522-MAX1
 Arguments are optional, user will be prompted for values.
 
 ```
-python3 MAX1522.py [Vin] [Vout]
+> python3 MAX1522.py [Vin] [Vout]
+> python3 MAX1522.py 3.6 30
+
+Vin(min) = 3.6V and Vout = 30.0V
+Max duty cycle is 88.2% >> DCM design
+
+R1 = 690KΩ and R2 = 30KΩ
+L(ideal) = 14µH
+Cout(min) = 255nF and Cout(max) = 3.0µF
+
 ```
 
 # elecUnits
