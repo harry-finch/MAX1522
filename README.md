@@ -12,22 +12,24 @@ Arguments are optional, user will be prompted for values.
 # elecUnits
 elecUnits is a library to convert numbers into a prefix notation or vice versa.
 
-unitPrefix() converts a very large or very small number into a more readable prefix notation (string).
+**unitPrefix()** converts a very large or very small number into a more readable prefix notation (string).
 ```
 unitPrefix(1000)      # returns 10.0K
 unitPrefix(0.000001)  # returns 1.0µ
 ```
 
-prefixToValue() converts a prefix notation to a float.
+**prefixToValue()** converts a prefix notation to a float.
 ```
 prefixToValue("10K") # returns 1000
 prefixToValue("1µ")  # returns 0.000001
+prefixToValue("")    # returns None
 ```
-Returns None if string is empty
 
-prefixAndUnitToValue() converts a prefix notation (string) - including the unit - to a float.
+
+**prefixAndUnitToValue()** converts a prefix notation (string) - including the unit - to a float.
 ```
 prefixAndUnitToValue("10KV") # returns 1000
 prefixAndUnitToValue("1µA")  # returns 0.000001
+prefixAndUnitToValue("")     # returns None
 ```
-Returns None if string is empty
+
