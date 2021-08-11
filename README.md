@@ -1,8 +1,6 @@
 # MAX1522 circuit generator
 The script will calculate the values of the passive components needed given a Vin and a desired Vout.
-All formulas taken from the datasheet.
-
-Datasheet for MAX1522: https://datasheets.maximintegrated.com/en/ds/MAX1522-MAX1524.pdf
+All formulas were taken from the datasheet: https://datasheets.maximintegrated.com/en/ds/MAX1522-MAX1524.pdf
 
 Arguments are optional, user will be prompted for values.
 
