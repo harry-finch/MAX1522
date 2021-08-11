@@ -6,7 +6,7 @@
 import math
 import re
 
-# Converts a very large or very small number into a more readable prefix notation (string).
+# Converts a very large or very small number (float) into a more readable prefix notation (string).
 # unitPrefix(1000)      => returns 10.0K
 # unitPrefix(0.000001)  => returns 1.0µ
 
@@ -45,10 +45,10 @@ def unitPrefix(num):
 
     return str(value)+prefixes[multiplier]    
 
-# Converts a prefix notation to a float.
+# Converts a prefix notation (string) to a float.
 # prefixToValue("10K") => returns 1000
 # prefixToValue("1µ")  => returns 0.000001
-# Returns None if string is empty
+# prefixToValue("")  => returns None
 
 def prefixToValue(numStr):
     try: return float(numStr)
@@ -73,7 +73,7 @@ def prefixToValue(numStr):
 # Converts a prefix notation (string) - including the unit - to a float.
 # prefixAndUnitToValue("10KV") => returns 1000
 # prefixAndUnitToValue("1µA")  => returns 0.000001
-# Returns None if string is empty
+# prefixAndUnitToValue("")  => returns None
 
 def prefixAndUnitToValue(numStr):
         numStr = numStr[:-1]
