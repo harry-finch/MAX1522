@@ -1,4 +1,7 @@
-# Library 
+# elecUnits by Stéphane Muller
+#
+# elecUnits is a library to convert numbers into a prefix notation or vice versa. 
+# Just import the library into your Python program and use the functions.
 
 import math
 import re
