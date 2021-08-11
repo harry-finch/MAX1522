@@ -13,6 +13,8 @@ import sys
 # elecUnits.py needs to be in the same directory
 import elecUnits
 
+Vinmin, Vout = ''
+
 def dcmDesign(Vinmin, Vout, Vd, Iloadmax, Ton, Tss, Rtwo, Vfb):
     Rone = Rtwo * ((Vout / Vfb) - 1)
     dutyCycle = ((Vout + Vd - Vinmin)/(Vout + Vd)) * 100
@@ -47,10 +49,7 @@ def ccmDesign(Vinmin, Vout, Vd, Iloadmax, Ton, Tss, Rtwo, Vfb):
 
 # if Vin and Vout have not been passed as arguments, prompt user for all values
 if len(sys.argv) != 3:
-    Vinmin = elecUnits.prefixToValue(input("Vin (V) : "))
     while not Vinmin: Vinmin = elecUnits.prefixToValue(input("Vin (V) : "))
-
-    Vout = elecUnits.prefixToValue(input("Vout (V) : "))
     while not Vout: Vout = elecUnits.prefixToValue(input("Vout (V) : "))
 
     Vd = elecUnits.prefixToValue(input("Vd (V - default O.5V) : "))
