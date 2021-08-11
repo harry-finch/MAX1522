@@ -48,7 +48,7 @@ def unitPrefix(num):
 # Converts a prefix notation (string) to a float.
 # prefixToValue("10K") => returns 1000
 # prefixToValue("1µ")  => returns 0.000001
-# prefixToValue("")  => returns None
+# prefixToValue("")    => returns None
 
 def prefixToValue(numStr):
     try: return float(numStr)
@@ -73,7 +73,7 @@ def prefixToValue(numStr):
 # Converts a prefix notation (string) - including the unit - to a float.
 # prefixAndUnitToValue("10KV") => returns 1000
 # prefixAndUnitToValue("1µA")  => returns 0.000001
-# prefixAndUnitToValue("")  => returns None
+# prefixAndUnitToValue("")     => returns None
 
 def prefixAndUnitToValue(numStr):
         numStr = numStr[:-1]
